@@ -1,38 +1,82 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #282C34;
+}
+.App{
+  margin: 30px 10px 60px;
+}
+.App .heading{
   text-align: center;
+  color:white;
+  font-size: 26px;
+  font-weight: 400;
+}
+.App .subtitle{
+  color:white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  padding:10px 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  max-width: 1250px;
+  margin: auto;
+  padding:10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-
-.App-link {
-  color: #61dafb;
+.col-4{
+  flex-basis: 25%;
+  min-width: 250px;
+  padding:10px
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card{
+  background: #ffffff;
+  padding:10px;
+  border-radius: 3px;
+}
+.card-img{
+  background: #000;
+}
+.card-img img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.card-info{
+  padding:10px 0;
+  position: relative;
+}
+.card-info .card-id{
+  position: absolute;
+  right:10px;
+  top:12px;
+  background: #555;
+  padding: 6px 10px;
+  border-radius: 50%;
+  color:white;
+}
+.card-info .card-title{
+  font-size: 20px;
+  padding: 5px 0;
+}
+.card-info .card-text{
+  font-size: 15px;
+}
+.mt-2{
+  margin-top: 20px;
+}
+.mb-2{
+  margin-bottom: 20px;
 }

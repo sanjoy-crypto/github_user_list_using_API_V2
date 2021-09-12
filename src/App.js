@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react'
 import './App.css';
+import Users from './Users';
+import axios from 'axios'
 
 function App() {
+  const [users, setUsers] = useState([])
+
+  const getUser = async () => {
+    const res = await axios.get('https://api.github.com/users')
+    console.log(res.data);
+    setUsers(res.data)
+  }
+
+  useEffect(() => {
+    getUser()
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2 className="heading">List of Github Users Using API</h2>
+      <h4 className="subtitle">Source : https://api.github.com/users</h4>
+
+      <div className="container mt-2">
+        <div className="row">
+          {
+            users?.map((user, i) => (
+              <div key={i} className="col-4">
+                <Users user={user} />
+              </div>
+            ))
+          }
+
+
+        </div>
+      </div>
+
     </div>
   );
 }
